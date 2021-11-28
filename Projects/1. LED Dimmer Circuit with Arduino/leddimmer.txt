@@ -1,0 +1,17 @@
+int x ,y ;
+void setup() {
+ pinMode(3,OUTPUT); //led
+ pinMode(A0,INPUT); //potentiometer
+ Serial.begin(9600);
+
+}
+
+void loop() {
+  x = analogRead(A0);
+  y = map(x,0,1023,0,255);
+  analogWrite(3,y);
+  Serial.print("pwm value =");
+  Serial.println(y);
+  delay(100);
+  
+}
