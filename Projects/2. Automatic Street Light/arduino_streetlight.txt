@@ -1,0 +1,21 @@
+int x ;
+void setup() {
+  pinMode(A0,INPUT);
+  pinMode(2,OUTPUT);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+ x = analogRead(A0);
+ Serial.print("LDR=");
+ Serial.println(x);
+ if (x > 260){    // light is there so turn of led
+  digitalWrite(2,LOW); 
+ }
+ else if (x < 50){
+  digitalWrite(2,HIGH);
+ }
+
+ delay(100);
+}
