@@ -1,0 +1,15 @@
+int abhi ;
+void setup() {
+ pinMode(A0,INPUT);
+ Serial.begin(9600);
+
+}
+
+void loop() {
+  abhi = analogRead(A0); // 0 to 1023
+  int x = map(abhi,0,1023,0,100);
+  Serial.print("range = ");
+  Serial.println(x);
+  delay(100);
+    
+}
