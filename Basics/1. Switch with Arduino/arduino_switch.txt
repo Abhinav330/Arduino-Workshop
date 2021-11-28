@@ -1,0 +1,19 @@
+int x ;
+void setup() {
+  pinMode(13,OUTPUT);  //built_in led
+  pinMode(2,INPUT_PULLUP);  //switch
+ Serial.begin(9600);  // serial monitor
+  
+}
+
+void loop() {
+  x = digitalRead(2);
+  Serial.print("x =");
+  Serial.println(x);
+  if(x == 0){
+    digitalWrite(13,HIGH); // on pin 13
+  }
+  else{
+    digitalWrite(13,LOW);  // off pin 13
+  }
+}
